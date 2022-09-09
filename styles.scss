@@ -1,5 +1,243 @@
+@import url("https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&family=Lato:ital,wght@0,300;0,400;0,700;1,400&display=swap");
+
+$dark-blue: #02089a;
+$blue: #3a42ff;
+$light-blue: #a0a4ff;
+$ultra-light-blue: #f3f4ff;
+$dark-orange: #983701;
+$orange: #ff650f;
+$light-orange: #ff9e68;
+$green: #3eff3a;
+$light-green: #68ff77;
+$red: #ff3a3a;
+$light-red: #ff6868;
+$grey: #c3c3c3;
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Arvo;
+  color: $dark-blue;
+}
+
+p {
+  font-family: Lato;
+}
+// Laptop view, base px 21, multiplier of 1.414
+
+@media only screen and (min-width: 1201px) {
+  .mar-sm {
+    margin-bottom: 56px;
+  }
+  .content {
+    padding: 40px !important;
+  }
+  html {
+    font-size: 21px;
+  }
+  h1 {
+    font-size: 5.653rem;
+  }
+  h2 {
+    font-size: 3.998rem;
+  }
+  h3 {
+    font-size: 2.827rem;
+  }
+  h4 {
+    font-size: 1.9993rem;
+  }
+  h5 {
+    font-size: 1.414rem;
+  }
+  h6 {
+    font-size: 1rem;
+  }
+  p {
+    font-size: 21px;
+  }
+}
+// Tablet view, base px 21, multiplier of 1.414
+@media only screen and (min-width: 601px) and (max-width: 1200px) {
+  .mar-sm {
+    margin-bottom: 40px;
+  }
+  html {
+    font-size: 18px;
+  }
+  h1 {
+    font-size: 5.653rem;
+  }
+  h2 {
+    font-size: 3.998rem;
+  }
+  h3 {
+    font-size: 2.827rem;
+  }
+  h4 {
+    font-size: 1.9993rem;
+  }
+  h5 {
+    font-size: 1.414rem;
+  }
+  h6 {
+    font-size: 1rem;
+  }
+  p {
+    font-size: 1rem;
+  }
+}
+// Mobile view, base px 18, multiplier of 1.25
+@media only screen and (max-width: 600px) {
+  .mar-sm {
+    margin-bottom: 32px;
+  }
+  html {
+    font-size: 18px;
+  }
+  h1 {
+    font-size: 3.052rem;
+  }
+  h2 {
+    font-size: 2.441rem;
+  }
+  h3 {
+    font-size: 1.953rem;
+  }
+  h4 {
+    font-size: 1.563rem;
+  }
+  h5 {
+    font-size: 1.25rem;
+  }
+  h6 {
+    font-size: 1rem;
+  }
+  p {
+    font-size: 18px;
+  }
+}
+
+.container {
+  display: flex;
+  height: 100%;
+}
+
+.image-section {
+  background-image: url("./images//clouds.jpg");
+  background-size: cover;
+  flex-basis: 66%;
+}
+.valid {
+  border: 1px solid $green;
+}
+.error {
+  border: 1px solid $red;
+}
+.content {
+  height: 100%;
+  flex-basis: 100%;
+  padding: 16px 16px 220px;
+  background: $ultra-light-blue;
+}
+
+.user-input {
+  background: #fff;
+  border: 1px solid $orange;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+section {
+  margin-bottom: 32px;
+  h5 {
+    color: #000;
+    margin-bottom: 8px;
+  }
+  display: flex;
+  justify-content: space-between;
+}
+
+input {
+  width: 100%;
+  font-size: inherit;
+  border: 1px solid $grey;
+  outline: none;
+  padding: 8px;
+  &:valid:not(:placeholder-shown) {
+    border: 1px solid $green;
+  }
+  &:invalid:not(:placeholder-shown) {
+    border: 1px solid $red;
+  }
+  &:focus {
+    border-radius: 8px;
+    border: 1px solid $blue;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+      rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+      rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  }
+}
+
+.bold {
+  font-weight: 700;
+}
+.orange {
+  color: $orange;
+  &:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+}
+.btn {
+  padding: 8px 16px;
+  background-color: $orange;
+  border-radius: 8px;
+  border: none;
+  transition: box-shadow 0.25s ease-out;
+  margin: 32px 0;
+  h5 {
+    color: #fff;
+  }
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  &:hover {
+    box-shadow: none;
+  }
+  &:active {
+    background-color: $light-orange;
+  }
+}
+
+.title {
+  display: flex;
+}
+
+@media only screen and (max-width: 900px) {
+  section {
+    flex-direction: column;
+    margin-bottom: 0;
+  }
+  input {
+    margin-bottom: 16px;
+  }
+}
+@media only screen and (max-width: 560px) {
+  .image-section {
+    display: none;
+  }
 }
